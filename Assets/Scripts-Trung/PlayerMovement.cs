@@ -28,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     Vector3 moveDirection;
 
     Rigidbody rb;
+
+    public bool canMove = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -56,6 +58,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!canMove)
+            return;
         MovePlayer();
     }
 

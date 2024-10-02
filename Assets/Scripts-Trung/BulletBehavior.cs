@@ -36,7 +36,9 @@ public class BulletBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other) {
         // If bullet hit anything other than the player, destroy the bullet
-        if (other.gameObject.tag != "Player") {
+        if (other.gameObject.tag != "Player" && other.gameObject.tag != "Bullet") {
+            // Log the name of the object that the bullet hit
+            Debug.Log("Bullet hit " + other.gameObject.name);
             Destroy(gameObject);
         }
     }
